@@ -1,15 +1,16 @@
 # Your code goes here!
 class Anagram
   attr_accessor :detect
-  @all = []
   
-  def initialize (detect)
-  @detect = detect
+  
+  def initialize (detector)
+  @detector = detector
   end
-  
+
   def simple_matches(detect)
-    detect = Anagram.new
-    detect.match(%w(hello world zombies pants dipper)) == []
+      detect.each do
+      |i| if i.split("").sort == @detector.split("").sort
+      i
   end
   
   def one_match(listen)
